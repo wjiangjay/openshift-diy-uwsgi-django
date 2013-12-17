@@ -3,7 +3,7 @@
 import os
 import sys
 
-sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift'))
+sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'diy', 'openshift'))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'openshift.settings'
 #sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift'))
 #virtenv = os.environ['APPDIR'] + '/virtenv/'
