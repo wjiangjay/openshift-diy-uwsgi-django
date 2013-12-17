@@ -2,4 +2,7 @@
 # The logic to start up your application should be put in this
 # script. The application will work only if it binds to
 # $OPENSHIFT_DIY_IP:8080
-nohup $OPENSHIFT_REPO_DIR/diy/testrubyserver.rb $OPENSHIFT_DIY_IP $OPENSHIFT_REPO_DIR/diy > $OPENSHIFT_DIY_DIR/logs/server.log 2>&1 &
+#nohup $OPENSHIFT_REPO_DIR/diy/testrubyserver.rb $OPENSHIFT_DIY_IP $OPENSHIFT_REPO_DIR/diy > $OPENSHIFT_DIY_DIR/logs/server.log 2>&1 &
+
+$OPENSHIFT_DATA_DIR/bin/uwsgi -s $OPENSHIFT_DIY_IP:$OPENSHIFT_DIY_PORT --socket-protocol http --pp $OPENSHIFT_REPO_DIR/diy --module application -d $OPENSHIFT_DIY_LOG_DIR/app.log --pidfile $OPENSHIFT_TMP_DIR/uwsgi.pid
+
